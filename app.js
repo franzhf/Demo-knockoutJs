@@ -13,7 +13,9 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(express.bodyParser());
+//app.use(express.bodyParser());
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -27,7 +29,11 @@ if ('development' == app.get('env')) {
 
 require('./routes/users')(app);
 
+require('./routes/books')(app);
 
+//require('./routes/loans')(app);
+
+//require('./routes/returns')(app);
 
 http.createServer(app).listen(app.get('port'), function(){  
   console.log('Express server listening on port ' + app.get('port'));

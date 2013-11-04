@@ -9,6 +9,10 @@ function UsersViewModel() {
     // Data
     var self = this;
     self.users = ko.observableArray([]);
+    self.users.subscribe(function (user) {
+        console.log(user);
+    },this,"beforeChange");
+
     self.name = ko.observable();
 	self.userName = ko.observable();
 	self.bio = ko.observable();
@@ -56,6 +60,10 @@ function UsersViewModel() {
         });
 
     };
+
+    self.sayHello = function (user){
+        console.log('Welcome ' + user.name());
+    }
 
 }
 

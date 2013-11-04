@@ -1,14 +1,25 @@
 <!DOCTYPE html>
     <head>
         <title>TEST</title>
-        	
-        	
-        	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        	        	
+        	 <script type="text/javascript" src="../javascripts/jquery-1.10.2.min.js"></script>        	 
         	 <script src="../javascripts/knockout-2.3.0.js"></script>
         	 <script src="../javascripts/users.js" type="text/javascript" defer="defer"></script>
+
+           
     </head>
 <body>
+
+  <script type="text/html" id="itemTemplate">
+                <div data-bind="text:name"></div>
+                <button data-bind="click:$parent.sayHello">say hello</button>
+                <div data-bind="text: (function(user){ 
+                    console.log(user);
+                    return 'hello'
+                })(user) "></div>
+                
+ </script>
+
 
 
 <h1>Hello World</h1>
@@ -38,9 +49,8 @@
     <button data-bind="click:addUser">Add</button>
 </div>
 
+<h1>Using Template</h1>
+<div data-bind="template:{name:'itemTemplate',foreach:users,as : 'user'}">
 
-
-
-
-
+</div>
 </body>

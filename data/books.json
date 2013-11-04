@@ -1,0 +1,15 @@
+{
+
+  "Wpf": {
+    "name": "wpf",
+    "title": "WPF step by step",
+    "isbn": "9889-000-2222-1111"
+  },
+
+  "Silverlight": {
+    "name" : "Silverlight",
+    "title": "Advanced Silverlight",
+    "isbn": "34324-23432f-fff2333"
+  }
+
+}

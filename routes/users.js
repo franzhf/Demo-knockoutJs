@@ -7,6 +7,7 @@ var users = require('../data/users');
 module.exports = function(app) {
 
   app.get('/users', function(req, res){
+    console.log('retrive users');
     res.send( users );
   });
 
